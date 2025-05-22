@@ -1,106 +1,77 @@
-# 📺 Media Services Deployment Automation
+# 🖥️ FullScreen Web Browser
 
-**Auto-deploy media services using Docker Compose, Kubernetes, or Docker Swarm.**
+**A C# application designed for full-screen web monitoring using the WebBrowser control.**
 
-This project streamlines the deployment of various media-related services—such as Plex, Jellyfin, Sonarr, Radarr, and more—by leveraging container orchestration tools. It provides a unified approach to manage these services across different environments, ensuring consistency and ease of maintenance.
-
----
-
-## 🚀 Features
-
-- **Multi-Orchestrator Support**: Deploy services using Docker Compose, Kubernetes, or Docker Swarm.
-- **Automated Setup**: Utilize provided shell scripts for seamless installation and teardown.
-- **Service Management**: Easily add, remove, or update media services as needed.
-- **Scalability**: Designed to scale with your media consumption needs.
+This project provides a simple and efficient solution for displaying web content in full-screen mode, ideal for kiosks, digital signage, or monitoring dashboards.
 
 ---
 
-## 📁 Repository Structure
+## 📌 Features
 
-```
-media_services/
-├── yml/
-│   └── swarm/            # Docker Swarm stack files
-├── setup.sh              # Initializes the deployment environment
-├── deploy.sh             # Deploys the media services
-├── delete.sh             # Removes deployed services
-└── README.md             # Project documentation
-```
+- **Full-Screen Display**: Launches the application in full-screen mode without window borders or controls.
+- **Customizable URL**: Easily set the desired URL to be displayed.
+- **Auto-Refresh**: Optionally refresh the page at set intervals.
+- **Minimal UI**: Clean interface focused solely on displaying web content.
 
 ---
 
-## 🛠️ Prerequisites
+## 🛠️ Getting Started
 
-- **Docker**: Ensure Docker is installed and running.
-- **Docker Compose** (for Compose deployments)
-- **Kubernetes** (for Kubernetes deployments)
-- **Docker Swarm** (for Swarm deployments)
-- **Shell Environment**: Unix-like shell (e.g., Bash)
+### Prerequisites
 
----
+- Windows OS
+- [.NET Framework](https://dotnet.microsoft.com/en-us/download/dotnet-framework) (version compatible with the project)
 
-## ⚙️ Usage
+### Installation
 
-### 1. Clone the Repository
+1. **Clone the repository**:
 
-```bash
-git clone https://github.com/karam-ajaj/media_services.git
-cd media_services
-```
+   ```bash
+   git clone https://github.com/karam-ajaj/fullScreenWebBrowser.git
+   ```
 
-### 2. Set Up the Environment
+2. **Open the solution**:
 
-```bash
-./setup.sh
-```
+   Open `test_full.sln` in Visual Studio.
 
-This script will prepare your system by installing necessary dependencies and configuring the environment.
+3. **Build and run**:
 
-### 3. Deploy Services
-
-For Docker Compose:
-
-```bash
-./deploy.sh compose
-```
-
-For Kubernetes:
-
-```bash
-./deploy.sh kubernetes
-```
-
-For Docker Swarm:
-
-```bash
-./deploy.sh swarm
-```
-
-### 4. Teardown Services
-
-To remove the deployed services:
-
-```bash
-./delete.sh
-```
+   Build the solution and run the application.
 
 ---
 
-## 📦 Included Services
+## ⚙️ Configuration
 
-- **Plex**: Media server for streaming movies and TV shows.
-- **Jellyfin**: Open-source media system.
-- **Sonarr**: TV series management.
-- **Radarr**: Movie collection manager.
-- **Others**: Easily extendable to include additional services.
+To set the URL or adjust settings:
 
-*Note: The actual services deployed depend on the configuration files within the `yml/` directory.*
+1. Open the main form file (e.g., `MainForm.cs`).
+2. Locate the section where the WebBrowser control is initialized.
+3. Modify the URL or settings as needed.
+
+---
+
+## 📁 Project Structure
+
+```
+fullScreenWebBrowser/
+├── test_full.sln           # Visual Studio solution file
+├── test_full/              # Main project directory
+│   ├── MainForm.cs         # Main form with WebBrowser control
+│   ├── Program.cs          # Application entry point
+│   └── ...                 # Other project files
+├── README.md               # Project documentation
+└── ...                     # Additional files and directories
+```
 
 ---
 
 ## 🧩 Customization
 
-Feel free to modify the YAML files within the `yml/` directory to tailor the deployments to your specific needs. You can add new services, adjust resource allocations, or change environment variables as required.
+Feel free to modify the application to suit your specific needs:
+
+- **Change the default URL**: Set your preferred default web page.
+- **Adjust refresh intervals**: Implement timers to refresh the page periodically.
+- **Add navigation controls**: Include buttons or menus for navigation if required.
 
 ---
 
@@ -118,4 +89,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## 📬 Contact
 
-For questions or support, please open an issue on the [GitHub repository](https://github.com/karam-ajaj/media_services/issues).
+For questions or support, please open an issue on the [GitHub repository](https://github.com/karam-ajaj/fullScreenWebBrowser/issues).
